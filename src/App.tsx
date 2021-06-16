@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
 import './App.css';
-import { App as SendBirdApp } from "sendbird-uikit";
+import { 
+  App as SendBirdApp,
+} from "sendbird-uikit";
 import "sendbird-uikit/dist/index.css";
 
 function App() {
+  const [stringSet] = useState({
+    'MODAL__CREATE_CHANNEL__TITLE': 'Pilih Kontak',
+    'TYPING_INDICATOR__IS_TYPING': 'sedang mengetik...',
+    'TOOLTIP__AND_YOU': ', dan kamu',
+    'CHANNEL_SETTING__LEAVE_CHANNEL__TITLE': 'Tutup percakapan',
+    'CHANNEL_SETTING__MEMBERS__INVITE_MEMBER': 'Undang teman',
+  });
   const [userId, setUserId] = useState<string>('');
   const [nickname, setNickname] = useState<string>('');
 
@@ -26,7 +35,6 @@ function App() {
     } else {
       alert('Please input user ID and nickname!');
     }
-    
   }
 
   return (
@@ -46,11 +54,18 @@ function App() {
           <button onClick={handleStartChat} style={{ fontSize: 18, textAlign: 'center'}}>Start Chat</button>
         </div>
       )}
-      {userId && nickname && <SendBirdApp
-        appId="8A07B235-354C-410D-A162-5491F09709EE"
-        userId={userId}
-        nickname={nickname}
-      />}
+      {userId && nickname && (
+        <>
+          <SendBirdApp
+            appId="8A07B235-354C-410D-A162-5491F09709EE"
+            userId={userId}
+            nickname={nickname}
+            showSearchIcon
+            stringSet={stringSet}
+            disableUserProfile={false}
+          />
+        </>
+      )}
     </div>
   );
 }
