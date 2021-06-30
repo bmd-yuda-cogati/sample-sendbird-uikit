@@ -1,41 +1,101 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
+.chat {
   height: 100vh;
   width: 100vw;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.chat .sendbird-channel-list .sendbird-place-holder {
+  display: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.chat .sendbird-channel-preview .sendbird-channel-preview__avatar,
+.chat .sendbird-channel-list .sendbird-avatar,
+.chat .sendbird-channel-list .sendbird-avatar .sendbird-avatar-img--default {
+  width: 32px !important;
+  height: 32px !important;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.chat .sendbird-channel-list .sendbird-avatar .sendbird-icon {
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
 }
-
-.App-link {
-  color: #61dafb;
+.chat
+  .sendbird-channel-preview
+  .sendbird-channel-preview__content
+  .sendbird-channel-preview__content__upper__header__channel-name {
+  font-weight: 400;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.chat
+  .sendbird-channel-preview
+  .sendbird-channel-preview__content
+  .sendbird-channel-preview__content__upper {
+  width: 100%;
+}
+.chat
+  .sendbird-channel-preview
+  .sendbird-channel-preview__content
+  .sendbird-channel-preview__content__lower {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 18px;
+  width: 100%;
+  margin-top: 0;
+}
+.sendbird-theme--light .chat .sendbird-channel-preview--active {
+  border-left: 0;
+}
+.chat .sendbird-channel-preview--active,
+.chat .sendbird-channel-preview {
+  padding: 12px 8px;
+}
+.chat .sendbird-channel-preview {
+  height: auto;
+}
+.chat .sendbird-channel-preview .sendbird-channel-preview__content {
+  margin-left: 12px;
+}
+.chat .sendbird-channel-preview .sendbird-channel-preview__action {
+  top: 0;
+  right: 0;
+}
+.chat
+  .sendbird-channel-preview
+  .sendbird-channel-preview__action
+  .sendbird-iconbutton {
+  width: 24px !important;
+  height: 24px !important;
+  padding: 0;
+}
+.chat
+  .sendbird-channel-preview
+  .sendbird-channel-preview__action
+  .sendbird-iconbutton
+  .sendbird-icon {
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  min-height: 16px !important;
+}
+.chat .sendbird-message .sendbird-avatar,
+.chat .sendbird-message .sendbird-user-message__sender-name {
+  display: none;
+}
+.chat .sendbird-user-message--incoming {
+  padding-left: 0;
+}
+.sendbird-theme--light
+  .chat
+  .sendbird-user-message--outgoing
+  .sendbird-user-message__text-balloon
+  .sendbird-user-message__text-balloon__inner,
+.sendbird-theme--light .chat .sendbird-label--color-oncontent-1,
+.sendbird-theme--light
+  .chat
+  .sendbird-channel-preview--active
+  .sendbird-channel-preview__content__upper__header__channel-name,
+.chat
+  .sendbird-channel-preview
+  .sendbird-channel-preview__content
+  .sendbird-channel-preview__content__lower__last-message {
+  color: #121212;
 }
